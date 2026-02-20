@@ -151,16 +151,17 @@ This project uses **generic env var names** to keep providers interchangeable. Y
 
 #### Example provider setups
 
-**OpenRouter
+**OpenRouter**
 ```env
-LLM_API_KEY=...
+LLM_API_KEY=<get_free_key_from_openrouter>
 LLM_MODEL=openrouter/arcee-ai/trinity-large-preview:free
 # LLM_BASE_URL not required (LiteLLM handles OpenRouter model prefix)
 ```
+Get API Key at - https://openrouter.ai/
 
 **Gemini (AI Studio / Developer API)**
 ```env
-LLM_API_KEY=...
+LLM_API_KEY=<get_key_from_google_ai_studio>
 LLM_MODEL=gemini/gemini-3-flash-preview
 # LLM_BASE_URL usually not needed
 ```
@@ -218,7 +219,7 @@ All core settings can be passed from the command line (and override `.env` defau
 agentcli --cwd . --model openrouter/arcee-ai/trinity-large-preview:free
 
 # Gemini model, autosave off
-agentcli --model gemini/gemini-1.5-pro --no-autosave
+agentcli --model gemini/gemini-3-flash-preview --no-autosave
 
 # Force verbose + no truncation
 agentcli --verbose --truncate-lines 0
@@ -521,7 +522,7 @@ If a user rejects an action, the tool result is handled as a **polished “Opera
 ## Interesting Project
 
 ### Chrome Extension: Quick Def
-I asked the agent `agentcli` to create a Chrome Extension which shows the meaning of the selected word on an overlay. This was the exact prompt I gave in `/paste` mode.
+I asked the agent `agentcli` to create a Chrome Extension which shows the meaning of the selected word on a page in an overlay. This was the exact prompt I gave in `/paste` mode.
 ```
 Create a minimal Chrome Extension (Manifest V3) called "Quick Definition".
 
@@ -593,7 +594,7 @@ Tool instructions:
 
 ![Close Button Not Working](./quick-def/imgs/4.png)
 
-### 5. Finally I tested the extension and it worked exactly how I wanted it to work. (see top right corner in below image)
+### 5. Finally I tested the extension and it worked exactly how I wanted it to work. Note selection on page not visible in screenshot (see top right corner in below image)
 
 ![Working Extension](./quick-def/imgs/5.png)
 
