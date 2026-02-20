@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Definition",
+  "version": "1.0",
+  "description": "Double-click or select a word to get its definition.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
